@@ -1,35 +1,71 @@
 using System;
 
-    class A{
+
+    public class A{
+        
         private int a;
         private int b;
-            public A(int a,int b){
-                this.a = a;
-                this.b = b;
-            }
-            public int multiply
-            {
-                get{return a*=b;}
-            }
-            public int assume
-            {
-                get{return a+b;}
-            }
-    }
-    class B:A{
-        private int d;
-        public int c2 
+        
+        public A(int a,int b)
         {
-            get{while(d=0) return a+b+d;}
+            this.a = a;
+            this.b = b;
+        }
+        public int get_a
+        {
+            get{return a;}
+        }
+        
+        public int get_b
+        {
+            get{return b;}
+        }
+        public int c
+        {
+            get{return a*=b;}
         }
 
+        public int c1
+        {
+            get{return a+b;}
+        }
+        
+    }
+
+    public class B:A{
+
+        private int d;
+
+        public B(int a,int b,int d):base(a,b)
+        {
+            this.d = d;
+        }
+		
+        public int get_d
+        {
+            get{return d;}
+        }
+        /*public int c2{
+            get {return a+b+d; 
+                while(d = 10){
+                d++;
+            }
+            }
+        }*/
 
     }
-        public class Programm
+
+    public class Programm
+    {
+        static void Main()
         {
-             static void Main(){
-                 A Obj = new A();
-                 System.Console.WriteLine(Obj.multiply);
-                 System.Console.WriteLine(Obj.assume);
-             }
-}
+            B obj_b = new B(2,3,10); 
+            Console.WriteLine(obj_b.get_a);
+            Console.WriteLine(obj_b.get_b);
+            Console.WriteLine(obj_b.get_d);
+            A obj_a = new A(5,6);
+            Console.WriteLine(obj_a.get_a);
+            Console.WriteLine(obj_a.get_b);
+            
+       }
+    }

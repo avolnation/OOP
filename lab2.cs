@@ -2,23 +2,13 @@ using System;
 
 
     public class A{
-        
-        private int a;
-        private int b;
-        
+        public int a;
+        public int b;
+        /* A class constructor*/
         public A(int a,int b)
         {
             this.a = a;
             this.b = b;
-        }
-        public int get_a
-        {
-            get{return a;}
-        }
-        
-        public int get_b
-        {
-            get{return b;}
         }
         public int c
         {
@@ -34,38 +24,34 @@ using System;
 
     public class B:A{
 
-        private int d;
-
+        public int d;
+        private int temp = 0;
+        private int answ;
+        /* B class construct*/
         public B(int a,int b,int d):base(a,b)
         {
             this.d = d;
         }
-		
-        public int get_d
-        {
-            get{return d;}
+	    public int c2{
+            set{while(temp == 0)
+                temp = a+b+d;}
+            get {return temp;}
         }
-        /*public int c2{
-            get {return a+b+d; 
-                while(d = 10){
-                d++;
-            }
-            }
-        }*/
-
     }
-
     public class Programm
     {
         static void Main()
         {
-            B obj_b = new B(2,3,10); 
-            Console.WriteLine(obj_b.get_a);
-            Console.WriteLine(obj_b.get_b);
-            Console.WriteLine(obj_b.get_d);
+            B obj_b = new B(2,3,10);
+            obj_b.c2 = obj_b.c2;
+            Console.WriteLine("value of property c2 from class B is: " + obj_b.c2);
+            //writing in console values of fields
+            Console.WriteLine("value of field a from class B is: " + obj_b.a);
+            Console.WriteLine("value of field b from class B is: " + obj_b.b);
+            Console.WriteLine("value of field d from class B is: " + obj_b.d);
             A obj_a = new A(5,6);
-            Console.WriteLine(obj_a.get_a);
-            Console.WriteLine(obj_a.get_b);
+            Console.WriteLine("value of field a from class A is: " + obj_a.a);
+            Console.WriteLine("value of field b from class A is: " + obj_a.b);
             
        }
     }

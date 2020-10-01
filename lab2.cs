@@ -26,7 +26,6 @@ using System;
 
         public int d;
         private int temp = 0;
-        private int answ;
         /* B class construct*/
         public B(int a,int b,int d):base(a,b)
         {

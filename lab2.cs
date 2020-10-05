@@ -4,6 +4,9 @@ using System;
     public class A{
         public int a;
         public int b;
+	public A()
+	{
+	}
         /* A class constructor*/
         public A(int a,int b)
         {
@@ -26,11 +29,12 @@ using System;
 
         public int d;
         private int temp = 0;
-	public B(int a,int b):base(a,b)
+	public B(int a,int b,int d):base(a,b)
         {   
+		this.d = d;
         }
         /* B class construct*/
-        public B(int a,int b,int d):base(a,b)
+        public B(int d)
         {
             this.d = d;
         }

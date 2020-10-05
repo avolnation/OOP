@@ -58,6 +58,7 @@ using System;
             A obj_a = new A(5,6);
             Console.WriteLine("value of field a from class A is: " + obj_a.a);
             Console.WriteLine("value of field b from class A is: " + obj_a.b);
-            
+            B obj_b1 = new B(8);
+            Console.WriteLine("value of field d from class B is: " + obj_b1.d);
        }
-    }
+}

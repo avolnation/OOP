@@ -29,16 +29,13 @@ using System;
         public int d;
         private int temp = 0;
         public int[] arr;
-        private int i = 0;
+        private int k = 0;
 	public B(int a,int b,int d):base(a,b)
         {   
 		    this.d = d;
             arr = new int[a];
-            c2 = c2;
-            i = 0;
-            while(i < a){
-                arr[i] = i * temp;
-                i++;
+            for(int i=0;i<arr.Length;i++){
+                arr[i] = i * c2;
             }
         }
         /* B class construct*/
@@ -46,11 +43,16 @@ using System;
         {
             this.d = d;
         }
+        
 	    public int c2{
-            set{while(i < a){
+            get{
+                int i = 0;
+                while(i < a){
                 temp = a+b+d;
-                i++;}}
-            get {return temp;}
+                i++;
+            }
+            return temp;
+            }
         }
     }
     public class Programm
@@ -59,7 +61,7 @@ using System;
     {
         B obj_b = new B(3,4,5);
         
-        foreach(int i in obj_b.arr)
+        foreach(var i in obj_b.arr)
         {
             System.Console.WriteLine($"{i}");
         }        

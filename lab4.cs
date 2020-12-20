@@ -68,7 +68,7 @@ using System;
         B obj_b = new B(3,4,5);
         /* вывод элементов массива через индексатор*/
         for(int i=0;i<obj_b.a;i++){
-            Console.WriteLine(obj_b.arr[i]);
+            Console.WriteLine(obj_b[i]);
         }    
     }
     }

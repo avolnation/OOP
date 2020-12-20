@@ -30,6 +30,7 @@ using System;
         private int temp = 0;
         public int[] arr;
         private int k = 0;
+	    /* array "arr" indexator*/
         public int this[int ind]
         {
             get{return arr[ind];}
@@ -65,7 +66,7 @@ using System;
         static void Main()
     {
         B obj_b = new B(3,4,5);
-        
+        /* вывод элементов массива через индексатор*/
         for(int i=0;i<obj_b.a;i++){
             Console.WriteLine(obj_b.arr[i]);
         }    

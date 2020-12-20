@@ -27,10 +27,19 @@ using System;
 
     public class B:A{
         public int d;
+        
         private int temp = 0;
+        
         public int[] arr;
+       
         private int k = 0;
-	    /* array "arr" indexator*/
+
+        private string[] names = new string[3]{"Anna","Maxim","Alex"};
+
+        public string this[int index,int ind1]{
+            get{return names[index];}
+        }
+        
         public int this[int ind]
         {
             get{return arr[ind];}
@@ -66,9 +75,12 @@ using System;
         static void Main()
     {
         B obj_b = new B(3,4,5);
-        /* вывод элементов массива через индексатор*/
+        
         for(int i=0;i<obj_b.a;i++){
             Console.WriteLine(obj_b[i]);
-        }    
+        } 
+        for(int i=0;i<obj_b.a;i++){
+            Console.WriteLine(obj_b[i,2]);
+        }      
     }
     }

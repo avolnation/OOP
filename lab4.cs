@@ -70,17 +70,44 @@ using System;
             }
         }
     }
+    public class C<T>
+    {
+        public static string idk = "We wish you a merry christmas!";                       
+        
+        public T var = default(T);
+
+        public void Write(){
+            Console.WriteLine(idk);
+        }
+
+    }
     public class Programm
     {
         static void Main()
     {
         B obj_b = new B(3,4,5);
+    
+        for(int i=0;i<obj_b.a;i++){
+            Console.WriteLine(obj_b[i] + " " + obj_b[i,2]);
+           
+        }
         
-        for(int i=0;i<obj_b.a;i++){
-            Console.WriteLine(obj_b[i]);
-        } 
-        for(int i=0;i<obj_b.a;i++){
-            Console.WriteLine(obj_b[i,2]);
-        }      
-    }
+            C<int> intObj = new C<int>();
+        
+            C<string> strObj = new C<string>();
+        
+                intObj.var = 712345;
+                strObj.var = "Weeeelcome";
+
+
+            Console.WriteLine("int static idk:");
+                intObj.Write();
+            Console.WriteLine("string static idk:");
+                strObj.Write();
+            
+            C<int>.idk = "And the happy New Year!";
+            
+            Console.WriteLine("new int static idk:");
+                intObj.Write();
+            }
     }
